@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://webservices.services.cl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservices.services.cl/">
+
+<xs:element name="BuscarPersona" type="tns:BuscarPersona" />
+
+<xs:element name="BuscarPersonaResponse" type="tns:BuscarPersonaResponse" />
+
+<xs:element name="ConsultarTodo" type="tns:ConsultarTodo" />
+
+<xs:element name="ConsultarTodoResponse" type="tns:ConsultarTodoResponse" />
+
+<xs:element name="DeletePersona" type="tns:DeletePersona" />
+
+<xs:element name="DeletePersonaResponse" type="tns:DeletePersonaResponse" />
+
+<xs:element name="InsertarNuevaPersona" type="tns:InsertarNuevaPersona" />
+
+<xs:element name="InsertarNuevaPersonaResponse" type="tns:InsertarNuevaPersonaResponse" />
+
+<xs:element name="UpdatePersona" type="tns:UpdatePersona" />
+
+<xs:element name="UpdatePersonaResponse" type="tns:UpdatePersonaResponse" />
+
+<xs:complexType name="DeletePersona">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DeletePersonaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="BuscarPersona">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="BuscarPersonaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="InsertarNuevaPersona">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int" />
+<xs:element name="nombre" type="xs:string" minOccurs="0" />
+<xs:element name="fechaNacimiento" type="xs:string" minOccurs="0" />
+<xs:element name="fechaDesceso" type="xs:string" minOccurs="0" />
+<xs:element name="area" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="InsertarNuevaPersonaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarTodo">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="ConsultarTodoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:persona" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="persona">
+<xs:sequence>
+<xs:element name="area" type="xs:string" minOccurs="0" />
+<xs:element name="codigo" type="xs:int" minOccurs="0" />
+<xs:element name="fechaDesceso" type="xs:string" minOccurs="0" />
+<xs:element name="fechaNacimiento" type="xs:string" minOccurs="0" />
+<xs:element name="nombre" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="UpdatePersona">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int" />
+<xs:element name="nombre" type="xs:string" minOccurs="0" />
+<xs:element name="fechaNacimiento" type="xs:string" minOccurs="0" />
+<xs:element name="fechaDesceso" type="xs:string" minOccurs="0" />
+<xs:element name="area" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="UpdatePersonaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
